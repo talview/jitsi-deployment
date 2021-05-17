@@ -28,5 +28,5 @@ sed -i 's/email: .*/email: '$(get-secret "spec.acme.email")'/g' base/ops/cert-ma
 sed -i 's/users: .*/users: '$(encrypt-secret "users")'/g' base/ops/logging/es-realm-secret.yaml
 sed -i 's/users_roles: .*/users_roles: '$(encrypt-secret "users_roles")'/g' base/ops/logging/es-realm-secret.yaml
 
-sed -i 's/username: .*/username: '$(encrypt-secret "username")'/g' overlays/${instance}-monitoring/ops/bbb-basic-auth-secret.yaml
-sed -i 's/password: .*/password: '$(encrypt-secret "password")'/g' overlays/${instance}-monitoring/ops/bbb-basic-auth-secret.yaml
+# sed -i 's/username: .*/username: '$(encrypt-secret "username")'/g' overlays/${instance}-monitoring/ops/bbb-basic-auth-secret.yaml
+# sed -i 's/password: .*/password: '$(encrypt-secret "password")'/g' overlays/${instance}-monitoring/ops/bbb-basic-auth-secret.yaml

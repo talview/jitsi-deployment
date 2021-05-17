@@ -41,11 +41,11 @@ spec:
             - name: XMPP_SERVER
               value: prosody
             - name: XMPP_DOMAIN
-              value: meet.jitsi
+              value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
-              value: auth.meet.jitsi
+              value: auth.meet.labs.talview.com
             - name: XMPP_INTERNAL_MUC_DOMAIN
-              value: internal-muc.meet.jitsi
+              value: internal-muc.meet.labs.talview.com
             - name: JICOFO_COMPONENT_SECRET
               valueFrom:
                 secretKeyRef:

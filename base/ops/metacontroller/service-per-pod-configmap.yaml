@@ -31,6 +31,7 @@ data:
         {
           apiVersion: "v1",
           kind: "Service",
+          namespace: "jitsi",
           metadata: {
             name: statefulset.metadata.name + "-" + index,
             labels: {app: "service-per-pod"}
@@ -43,6 +44,7 @@ data:
             externalTrafficPolicy: "Local",
             ports: [
               {
+                "name":"udp",
                 "port": basePort + index,
                 "protocol": "UDP",
                 "targetPort": basePort + index,

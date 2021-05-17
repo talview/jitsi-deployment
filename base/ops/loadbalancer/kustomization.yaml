@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - haproxy-configmap.yaml
-- haproxy-ingress.yaml
+# - haproxy-ingress.yaml
 - haproxy-service.yaml
 - haproxy-statefulset.yaml
 - haproxy0-service.yaml

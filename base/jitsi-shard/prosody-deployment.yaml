@@ -75,13 +75,13 @@ spec:
             subPath: jitsi-meet.cfg.lua
           env:
             - name: XMPP_DOMAIN
-              value: meet.jitsi
+              value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
-              value: auth.meet.jitsi
+              value: auth.meet.labs.talview.com
             - name: XMPP_MUC_DOMAIN
-              value: muc.meet.jitsi
+              value: muc.meet.labs.talview.com
             - name: XMPP_INTERNAL_MUC_DOMAIN
-              value: internal-muc.meet.jitsi
+              value: internal-muc.meet.labs.talview.com
             - name: XMPP_MUC_MODULES
               value: muc_meeting_id,muc_domain_mapper
             - name: JICOFO_COMPONENT_SECRET

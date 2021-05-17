@@ -70,15 +70,15 @@ spec:
             - name: JICOFO_AUTH_USER
               value: focus
             - name: XMPP_DOMAIN
-              value: meet.jitsi
+              value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
-              value: auth.meet.jitsi
+              value: auth.meet.labs.talview.com
             - name: XMPP_INTERNAL_MUC_DOMAIN
-              value: internal-muc.meet.jitsi
+              value: internal-muc.meet.labs.talview.com
             - name: XMPP_BOSH_URL_BASE
               value: http://prosody:5280
             - name: XMPP_MUC_DOMAIN
-              value: muc.meet.jitsi
+              value: muc.meet.labs.talview.com
             - name: TZ
               value: Europe/Berlin
             - name: JVB_TCP_HARVESTER_DISABLED
