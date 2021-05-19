@@ -44,7 +44,7 @@ spec:
             requests:
               memory: 300Mi
               cpu: 300m
-          image: jitsi/prosody:stable-4548-1
+          image: jitsi/prosody:stable-5870
           imagePullPolicy: IfNotPresent
           ports:
             - name: metrics
@@ -78,6 +78,8 @@ spec:
               value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
               value: auth.meet.labs.talview.com
+            - name: PUBLIC_URL
+              value: meet.labs.talview.com
             - name: XMPP_MUC_DOMAIN
               value: muc.meet.labs.talview.com
             - name: XMPP_INTERNAL_MUC_DOMAIN
@@ -104,9 +106,7 @@ spec:
                   name: jitsi-config
                   key: JICOFO_AUTH_PASSWORD
             - name: TZ
-              value: Europe/Berlin
-            - name: JVB_TCP_HARVESTER_DISABLED
-              value: "true"
+              value: America/Los_Angeles
             # activate add-ons that enrich the available stats of prosody
             - name: GLOBAL_MODULES
               value: prometheus,measure_stanza_counts,measure_client_presence
@@ -138,4 +138,12 @@ spec:
                 secretKeyRef:
                   name: jitsi-config
                   key: TURNS_PORT
+            - name: JVB_TCP_HARVESTER_DISABLED
+              value: "false"
+            - name: JVB_TCP_PORT
+              value: "443"
+            - name: ENABLE_AUTH
+              value: "0"
+            - name: ENABLE_XMPP_WEBSOCKET
+              value: "false"
             

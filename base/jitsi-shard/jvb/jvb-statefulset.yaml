@@ -47,7 +47,7 @@ spec:
             - "-videobridge-url"
             - "http://localhost:8080/colibri/stats"
         - name: jvb
-          image: jitsi/jvb:stable-4548-1
+          image: jitsi/jvb:stable-5870
           imagePullPolicy: IfNotPresent
           lifecycle:
             preStop:
@@ -75,9 +75,9 @@ spec:
             - name: XMPP_SERVER
               value: prosody
             - name: DOCKER_HOST_ADDRESS
-              valueFrom:
-                fieldRef:
-                  fieldPath: status.hostIP
+              value: 64.225.89.45"
+            - name: PUBLIC_URL
+              value: meet.labs.talview.com
             - name: XMPP_DOMAIN
               value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
@@ -92,7 +92,9 @@ spec:
             - name: JICOFO_AUTH_USER
               value: focus
             - name: JVB_TCP_HARVESTER_DISABLED
-              value: "true"
+              value: "false"
+            - name: JVB_TCP_PORT
+              value: "443"
             - name: JVB_ENABLE_APIS
               value: colibri,rest
             - name: JVB_AUTH_USER
@@ -110,4 +112,8 @@ spec:
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
             - name: TZ
-              value: Europe/Berlin
+              value: America/Los_Angeles
+            - name: ENABLE_AUTH
+              value: "0"
+            - name: ENABLE_XMPP_WEBSOCKET
+              value: "false"

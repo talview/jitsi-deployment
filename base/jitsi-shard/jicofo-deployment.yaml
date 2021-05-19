@@ -29,7 +29,7 @@ spec:
             requests:
               memory: 400Mi
               cpu: 400m
-          image: jitsi/jicofo:stable-4548-1
+          image: jitsi/jicofo:stable-5870
           imagePullPolicy: IfNotPresent
           readinessProbe:
             # caution: this readinessProbe tries to create a new conference and hence also fails if
@@ -44,6 +44,8 @@ spec:
               value: meet.labs.talview.com
             - name: XMPP_AUTH_DOMAIN
               value: auth.meet.labs.talview.com
+            - name: XMPP_MUC_DOMAIN
+              value: muc.meet.labs.talview.com
             - name: XMPP_INTERNAL_MUC_DOMAIN
               value: internal-muc.meet.labs.talview.com
             - name: JICOFO_COMPONENT_SECRET
@@ -59,8 +61,12 @@ spec:
                   name: jitsi-config
                   key: JICOFO_AUTH_PASSWORD
             - name: TZ
-              value: Europe/Berlin
+              value: America/Los_Angeles
             - name: JVB_BREWERY_MUC
               value: jvbbrewery
             - name: JICOFO_ENABLE_HEALTH_CHECKS
               value: "true"
+            - name: ENABLE_AUTH
+              value: "0"
+            - name: ENABLE_XMPP_WEBSOCKET
+              value: "false"

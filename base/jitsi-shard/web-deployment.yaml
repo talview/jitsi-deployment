@@ -42,7 +42,7 @@ spec:
             requests:
               memory: 300Mi
               cpu: 400m
-          image: jitsi/web:stable-4548-1
+          image: jitsi/web:stable-5870
           imagePullPolicy: IfNotPresent
           readinessProbe:
             httpGet:
@@ -61,6 +61,8 @@ spec:
             mountPath: /defaults/interface_config.js
             subPath: interface_config.js
           env:
+            - name: PUBLIC_URL
+              value: meet.labs.talview.com
             - name: DISABLE_HTTPS
               value: "1"
             - name: HTTP_PORT
@@ -80,6 +82,13 @@ spec:
             - name: XMPP_MUC_DOMAIN
               value: muc.meet.labs.talview.com
             - name: TZ
-              value: Europe/Berlin
+              value: America/Los_Angeles
             - name: JVB_TCP_HARVESTER_DISABLED
-              value: "true"
+              value: "false"
+            - name: JVB_TCP_PORT
+              value: "443"
+            - name: ENABLE_AUTH
+              value: "false"
+            - name: ENABLE_XMPP_WEBSOCKET
+              value: "false"
+
